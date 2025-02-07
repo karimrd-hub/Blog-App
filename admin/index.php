@@ -32,6 +32,14 @@ $posts = mysqli_query($connection, $query);
                     ?>
                 </p>
             </div>
+    <?php elseif(isset($_SESSION['delete-post-success'])) : // shows if edit post was successful?>
+        <div class="alert_message success container">
+            <p>
+                <?= $_SESSION['delete-post-success'];
+                unset($_SESSION['delete-post-success']);
+                ?>
+            </p>
+        </div>
     <?php endif ?>
     <div class="container dashboard__container">
         <button class="sidebar__toggle" id="show__sidebar-btn"><i class="uil uil-angle-right-b"></i></button>
@@ -73,7 +81,7 @@ $posts = mysqli_query($connection, $query);
             </ul>
         </aside>
         <main>
-            <h2>Manage Users</h2>
+            <h2>Manage Posts</h2>
             <?php if(mysqli_num_rows($posts) > 0) : ?>
             <table>
                 <thead>
@@ -97,7 +105,7 @@ $posts = mysqli_query($connection, $query);
                         <td><?= $post['title'] ?></td>
                         <td><?= $category['title'] ?></td>
                         <td><a href="<?= ROOT_URL ?>admin/edit-post.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a></td>
-                        <td><a href="<?= ROOT_URL ?>admin/delete-category.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
+                        <td><a href="<?= ROOT_URL ?>admin/delete-post.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
                     </tr>
                     <?php endwhile ?>
                 </tbody>
