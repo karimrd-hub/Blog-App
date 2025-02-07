@@ -12,42 +12,42 @@
 
 <section class="dashboard">
         <?php if(isset($_SESSION['add-user-success'])) : // shows if add user was successful?>
-        <div class="alert__message success container">
+        <div class="alert_message success container">
                 <p>
-                    <?= $_SESSION['add-user-success']; 
-                    unset($_SESSION['add-user-success']); 
+                    <?= $_SESSION['add-user-success'];
+                    unset($_SESSION['add-user-success']);
                     ?>
                 </p>
             </div>
         <?php elseif(isset($_SESSION['edit-user-success'])) : // shows if edit user was successful?>
-                <div class="alert__message success container">
+                <div class="alert_message success container">
                     <p>
-                        <?= $_SESSION['edit-user-success']; 
-                        unset($_SESSION['edit-user-success']); 
+                        <?= $_SESSION['edit-user-success'];
+                        unset($_SESSION['edit-user-success']);
                         ?>
                     </p>
                 </div>
         <?php elseif(isset($_SESSION['edit-user'])) : // shows if edit user was NOT successful?>
-            <div class="alert__message error container">
+            <div class="alert_message error container">
                 <p>
-                    <?= $_SESSION['edit-user']; 
-                        unset($_SESSION['edit-user']); 
+                    <?= $_SESSION['edit-user'];
+                        unset($_SESSION['edit-user']);
                     ?>
                 </p>
             </div>
         <?php elseif(isset($_SESSION['delete-user'])) : // shows if delete user was NOT successful?>
-            <div class="alert__message error container">
+            <div class="alert_message error container">
                 <p>
-                    <?= $_SESSION['delete-user']; 
-                        unset($_SESSION['delete-user']); 
+                    <?= $_SESSION['delete-user'];
+                        unset($_SESSION['delete-user']);
                     ?>
                 </p>
             </div>
         <?php elseif(isset($_SESSION['delete-user-success'])) : // shows if delete user was successful?>
-            <div class="alert__message success container">
+            <div class="alert_message success container">
                 <p>
-                    <?= $_SESSION['delete-user-success']; 
-                        unset($_SESSION['delete-user-delete-success']); 
+                    <?= $_SESSION['delete-user-success'];
+                        unset($_SESSION['delete-user-success']);
                     ?>
                 </p>
             </div>
@@ -55,8 +55,8 @@
     <div class="container dashboard__container">
         <button class="sidebar__toggle" id="show__sidebar-btn"><i class="uil uil-angle-right-b"></i></button>
         <button class="sidebar__toggle" id="hide__sidebar-btn"><i class="uil uil-angle-left-b"></i></button>
-        
-        
+
+
         <aside>
             <ul>
                 <li>
@@ -95,6 +95,7 @@
         </aside>
         <main>
             <h2>Manage Users</h2>
+            <?php if(mysqli_num_rows($users) > 0) : ?>
             <table>
                 <thead>
                     <tr>
@@ -117,6 +118,9 @@
                     <?php endwhile ?>
                 </tbody>
             </table>
+            <?php else : ?>
+                <div class="alert_message error"><?= "No users found" ?></div>
+            <?php endif ?>
         </main>
     </div>
 </section>

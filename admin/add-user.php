@@ -17,14 +17,14 @@ unset($_SESSION['add-user-data']);
     <div class="container form__section-container">
         <h2>Add user</h2>
         <?php if(isset($_SESSION['add-user'])) : ?>
-            <div class="alert__message error">
+            <div class="alert_message error">
                 <p>
                     <?= $_SESSION['add-user'];
                     unset($_SESSION['add-user']);
                     ?>
                 </p>
             </div>
-        <?php endif ?>    
+        <?php endif ?>
         <!-- <form action="<?= ROOT_URL ?>admin/add-user-logic.php" enctype="multipart/form-data" method="POST"> -->
         <form action="<?= ROOT_URL ?>admin/add-user-logic.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="firstname" value="<?= $firstname ?>" placeholder="First Name">

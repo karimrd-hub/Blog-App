@@ -32,7 +32,7 @@ if(isset($_POST['submit'])) {
         } else {
             // hash password
             $hashed_password = password_hash($createpassword,PASSWORD_DEFAULT);
-            
+
             // check if username is found or email exist
             $user_check_query = "SELECT * FROM users where username ='$username' OR email='$email'";
             $user_check_result = mysqli_query($connection, $user_check_query);
@@ -57,7 +57,7 @@ if(isset($_POST['submit'])) {
                         move_uploaded_file($avatar_tmp_name, $avatar_destination_path);
                     } else {
                         $_SESSION['add-user'] = "FILE should be less than 2mb";
-                    }    
+                    }
                 } else {
                     $_SESSION['add-user'] = "FILE should be png, jpg, or jpeg";
                 }
@@ -79,7 +79,7 @@ if(isset($_POST['submit'])) {
         if (!mysqli_errno($connection)) {
             //redirect to login page with success messgae
             $_SESSION['add-user-success'] = "New user $firstname $lastname added successfully";
-            header('location' . ROOT_URL . 'admin/manage-users.php');
+            header('location: ' . ROOT_URL . 'admin/manage-users.php');
             die();
         }
     }
