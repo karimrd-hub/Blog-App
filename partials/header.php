@@ -32,7 +32,7 @@ if(isset($_SESSION['user-id'])){
     <!-- Navbar of the home page -->
     <nav>
         <div class="container nav__container">
-            <a href="<?= ROOT_URL ?>" class="nav__logo">EGATOR</a>
+            <a href="<?= ROOT_URL ?>" class="nav__logo">The Knowledge Vault</a>
             <ul class="nav__items">
                 <li><a href="<?= ROOT_URL ?>blog.php">Blog</a></li>
                 <li><a href="<?= ROOT_URL ?>about.php">About</a></li>
@@ -41,7 +41,7 @@ if(isset($_SESSION['user-id'])){
                 <?php if(isset($_SESSION['user-id'])): ?>
                     <li class="nav__profile">
                         <div class="avatar">
-                            <img src="<?= ROOT_URL . '/images' . $avatar['avatar'] ?>" alt="">
+                            <img src="<?= ROOT_URL . '/images/' . $avatar['avatar'] ?>" alt="">
                         </div>
                         <ul>
                             <li><a href="<?= ROOT_URL ?>admin/index.php">Dashboard</a></li>
