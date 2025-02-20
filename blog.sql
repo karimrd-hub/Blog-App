@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2025 at 09:25 AM
+-- Generation Time: Feb 20, 2025 at 08:08 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -66,7 +66,12 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `title`, `body`, `thumbnail`, `date_time`, `category_id`, `author_id`, `is_featured`) VALUES
-(2, 'My Title', 'Hello there traveler', '1738571074sky.jpg', '2025-02-02 20:46:02', 4, 7, 1);
+(3, 'The Hidden Wonders of the Amazon Rainforest', 'The Amazon Rainforest, often called the &quot;lungs of the Earth,&quot; is home to millions of species, many still undiscovered. From the vibrant macaws flying overhead to the mysterious jaguar lurking in the shadows, every corner holds a story waiting to be told. Join me on a journey through its dense canopies and winding rivers as we explore the wild heart of South America.', '1740055352image_2025-02-20_144231161.png', '2025-02-20 12:42:32', 3, 8, 0),
+(4, 'The Silent Language of Abstract Art', 'Abstract art challenges us to see beyond the obvious. With splashes of color, chaotic lines, and undefined forms, it speaks directly to emotion, bypassing logic. In this post, we dive into the history of abstract expressionism and how artists like Kandinsky and Rothko transformed simple strokes into powerful messages.', '1740055434image_2025-02-20_144345329.png', '2025-02-20 12:43:54', 5, 8, 0),
+(5, 'Backpacking Across the Italian Coast', 'From the colorful villages of Cinque Terre to the sun-kissed Amalfi Coast, Italy&rsquo;s coastline offers an unforgettable adventure. I share my week-long backpacking journey, filled with breathtaking views, delicious seafood, and the kindness of locals. Whether you&#039;re an avid traveler or dreaming of your next escape, this guide has something for you.', '1740055582image_2025-02-20_144621760.png', '2025-02-20 12:46:22', 4, 10, 0),
+(6, 'Mastering the Art of Homemade Pasta', 'There&rsquo;s something magical about crafting pasta from scratch. The texture, the flavor, and the sheer satisfaction of turning flour and eggs into a delicious dish is unmatched. In this blog post, I walk you through my go-to recipe for silky tagliatelle and the secrets to a perfect tomato-basil sauce.', '1740074726image_2025-02-20_200525815.png', '2025-02-20 12:47:00', 3, 10, 0),
+(9, 'My title', 'Body', '1740074992image_2025-02-20_200951868.png', '2025-02-20 18:09:52', 4, 9, 0),
+(10, 'awdawd', 'wdadawd', '1740075074image_2025-02-20_201113754.png', '2025-02-20 18:11:14', 6, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -90,8 +95,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `avatar`, `is_admin`) VALUES
-(1, 'ali', 'jaber', 'alijaber', 'ali@gmail.com', '$2y$10$viFuqlC6bc3bL0y6QWwOWuFC3/W2Fswht60SkWCRq1mSO7LqHQwuS', '17362815221-notebook.png', 1),
-(7, 'Mohammad', 'Hussein', 'mhussein', 'mhmd@gmail.com', '$2y$10$VlrJGums0rJkq3.eHfTkkexKu7jbvVAXYD.dqRx1BBkShnlUq8DJm', '1738529096sched.png', 1);
+(8, 'Ali', 'Jaber', 'ajaber', 'ajaber@gmail.com', '$2y$10$9bD6.1iZQ4vk5LvUKtlaquexpbX2X6kVCnikklzn7DKf4GIXPFEpq', '1740055192image_2025-02-20_143951615.png', 1),
+(9, 'Karim', 'Ramadan', 'kramadan', 'kramadan@gmail.com', '$2y$10$DvYHIunhHXZ30Rumb8JDEOI/EBfSVxO76RdGnSRESJ0lUil61msTu', '1740055268image_2025-02-20_144107998.png', 0),
+(10, 'Mohammad', 'Hussein', 'mhussein', 'mhussein@gmail.com', '$2y$10$9DBcWPV90iMpA/hUJu/b0.zS2yZG9kxHFVHTXdpZ3pY0EBB2KNYCW', '1740055545image_2025-02-20_144544108.png', 1);
 
 --
 -- Indexes for dumped tables
@@ -125,19 +131,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables

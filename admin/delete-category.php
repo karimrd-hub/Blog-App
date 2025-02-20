@@ -6,11 +6,11 @@ if(isset($_GET['id'])) {
 
     // FOR LATER
     // update category id of posts that belong to this category to id of uncategorized category
-    $update_query = "UPDATE posts SET category_id=13 WHERE category_id=$id";
+    $update_query = "UPDATE posts SET category_id=6 WHERE category_id=$id";
     $update_query = mysqli_query($connection, $update_query);
 
     if(!mysqli_errno($connection)) {
-        
+
         // delete category
         $query = "DELETE FROM categories WHERE id=$id LIMIT 1";
         $result = mysqli_query($connection, $query);

@@ -15,7 +15,7 @@ $posts = mysqli_query($connection, $query);
 <!-- show featured post if there is any -->
 <?php if(mysqli_num_rows($featured_result) == 1) : ?>
     <section class="featured">
-        <div class="container featured_container">
+        <div class="container featured__Container">
             <div class="post__thumbnail">
                 <img src="./images/<?= $featured['thumbnail'] ?>">
             </div>
@@ -27,7 +27,7 @@ $posts = mysqli_query($connection, $query);
                 $category_result = mysqli_query($connection, $category_query);
                 $category = mysqli_fetch_assoc($category_result);
                 ?>
-                <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $featured['category_id'] ?>" class="category__buttom"><?= $category['title'] ?></a>
+                <a href="<?= ROOT_URL ?>category-posts.php?id=<?= $featured['category_id'] ?>" class="category__button"><?= $category['title'] ?></a>
                 <h2 class="post__title"><a href="<?= ROOT_URL ?>post.php?id=<?= $featured['id'] ?>"><?= $featured['title'] ?></a></h2>
                 <p class="post__body">
                     <?= substr($featured['body'], 0, 300) ?>...
